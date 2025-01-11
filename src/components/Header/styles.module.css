@@ -1,0 +1,153 @@
+:root{
+    --primary-color: #088F8F;
+    --background-color:#f6f6f6;
+    --foreground-color: #003cff;
+    --secondary-text-color: #0a0a0a;
+    --primary-text-color: #ffffff;
+    --toggle-bg: #088F8F;
+    --toggle-fg: #ffd000;
+  }
+  
+body.lightMode {
+    --primary-color: #088F8F;
+    --background-color: #f6f6f6;
+    --foreground-color: #003cff;
+    --secondary-text-color: #0a0a0a;
+}
+
+body.darkMode {
+    --primary-color: #ffffff;
+    --background-color: #181818;
+    --foreground-color: #ffffff;
+    --secondary-text-color: #cfcfcf;
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--secondary-text-color);
+}
+
+/* header */
+header a{
+    color: white;
+    text-decoration: none;
+    font-size: 15px;
+    transition: all 0.2s ease;
+}
+
+header a:hover{
+    cursor: pointer;
+    color: var(--primary-color);
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+    position: relative;
+    z-index: 1000; /* Ensure the header stays on top */
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0.4rem 1em;
+}
+
+.links {
+    display: flex;
+    gap: 1.5rem; /* Adjusted for consistent spacing */
+    align-items: center;
+}
+
+
+.links a{
+    border-bottom: 2px solid transparent;
+}
+
+.activeLink{
+    border-bottom: 2px solid var(--primary-color) !important;
+}
+
+.navbar .logo a, .navbar .links a {
+    white-space: nowrap;  /* Prevent the text from wrapping onto multiple lines */
+    overflow: hidden;  /* Hide any overflow */
+    text-overflow: ellipsis;  /* Display ellipsis for overflowing text */
+}
+
+.menuButton{
+    color: #fff;
+    cursor: pointer;
+    display: none;
+}
+
+.toggleContainer {
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin-left: 1rem; /* Space between links and toggle */
+    margin-right: 1em;
+}
+
+.toggle {
+    visibility: hidden;
+}
+
+.toggle + label {
+    display: flex;
+    align-items: center;
+    font-size: 1.5em;
+    cursor: pointer;
+    color: var(--secondary-text-color);
+    margin-right: 1em;
+}
+
+.toggle + label::before {
+    content: "";
+    height: 1em;
+    width: 2em;
+    border-radius: 12em;
+    background-color: var(--secondary-text-color);
+}
+
+.toggle + label::after {
+    content: "";
+    height: 0.8em;
+    width: 0.8em;
+    top: .12em;
+    border-radius: 1em;
+    background-color: var(--toggle-fg);
+    position: absolute;
+    left: 0.74em;
+    transition: background-color 250ms ease-in-out, transform 250ms ease-in-out;
+}
+
+.toggle:checked + label::after {
+    transform: translate(100%);
+}
+
+/* Make sure the navbar adjusts on smaller screens */
+@media (max-width: 992px) {
+    header{
+        background-color: transparent;
+        backdrop-filter: none;
+    }
+
+    .links{
+        display: none;
+    }
+
+    .menuButton {
+        display: block;  /* Show hamburger menu on small screens */
+    }
+
+    .toggleContainer {
+        position: static;
+        margin-left: 0;
+    }
+}

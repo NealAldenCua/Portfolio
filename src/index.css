@@ -1,0 +1,31 @@
+:root {
+    --primary-color: #088F8F;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body{
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  background-color: #eee;
+  /*background: url("./images/galaxy.jpg")rgba(0, 0, 0, 0.3);  remove or change so that will not be same with other pages */
+  background-blend-mode: multiply;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+}
+
+.page{
+  text-align: center;
+  padding-top: 45vh;
+  width: 100%;
+}
+
+.page h1{
+  color: whitesmoke;
+  font-size: 3rem;
+}
