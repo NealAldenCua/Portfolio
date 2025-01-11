@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
+import clsx from 'clsx'; // Import clsx
 import classes from './styles.module.css';
 import { IoMenuOutline as MenuIcon } from 'react-icons/io5';
 import logo from '../../images/logo.png';
@@ -41,7 +42,8 @@ const Header = () => {
                 </div>
 
                 {/* Links */}
-                <div className={classes.links}>
+                {/* <div className={clsx(classes.links, { [classes.toggleTheme]: isDark })}> not workin */}
+                <div className={clsx(classes.links, { [classes.toggleTheme]: isDark })}>
                     {LINKS.map((link) => (
                         <NavLink
                             key={link.name}
@@ -54,7 +56,7 @@ const Header = () => {
 
                     {/* Checkbox for theme toggle */}
                     <div className={classes.toggleContainer}>
-                        <input
+                        <input 
                             type="checkbox"
                             id="check"
                             className={classes.toggle}
