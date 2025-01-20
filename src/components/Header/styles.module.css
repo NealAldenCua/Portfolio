@@ -22,7 +22,7 @@ body.lightMode {
 }
 
 body.darkMode {
-    --primary-color: #ffffff;
+    --primary-color: #088F8F;
     --background-color: #181818;
     --foreground-color: #ffffff;
     --secondary-text-color: #cfcfcf;/* Light text for dark mode */
@@ -42,11 +42,6 @@ header a{
     font-size: 15px;
     transition: all 0.2s ease;
 }
-
-/* header a:hover{
-    cursor: pointer;
-    color: var(--primary-color);
-} */
 
 .header {
     display: flex;

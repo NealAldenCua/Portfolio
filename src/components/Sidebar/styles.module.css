@@ -34,15 +34,16 @@ body.darkMode {
     background-color: rgba(0, 0, 0, 0.3);
     left: 0;
     height: 100vh;
-    width: 300px;
+    width: 100%; /* change the width so that the blur will take all page on mobile view */
     top: 0;
     padding: 4.5rem 0;
     position: fixed;
     backdrop-filter: blur(5px);
     overflow: hidden;
-    transform: translateX(-100%);
+    transform: translateX(100%);
     transition: transform 0.5s ease-in-out;
     display: none;
+    z-index: 2;
 }
 
 .sidebar.open{
@@ -51,15 +52,17 @@ body.darkMode {
 
 .sidebar a{
     display: flex;
+    font-weight: bold;
     padding: 1.5rem;
     align-items: left;
     justify-content: left;
+    color: var(--secondary-text-color);
 }
 
-.closeIcon:hover{
+/* .closeIcon:hover{
     opacity: 1;
     scale: 1.5;
-}
+} */
 
 .closeIcon{
     top: 20px;
@@ -70,8 +73,8 @@ body.darkMode {
 }
 
 .activeLink{
-    color: #fff;
-    background-color: var(--primary-color) !important;
+    /* color: #fff; */
+    background-color: var(--active-link-color-dark) !important;
 }
 
 .activeLink:hover {
@@ -88,6 +91,7 @@ body.darkMode {
     background-color: transparent;
 }
 
+/* dark & light mode */
 .toggleContainer {
     display: flex;
     align-items: center;
@@ -119,7 +123,7 @@ body.darkMode {
     content: "";
     height: 0.8em;
     width: 0.8em;
-    top: 11.25em;
+    top: 14em;
     border-radius: 1em;
     background-color: var(--toggle-bg);
     position: absolute;
@@ -128,19 +132,21 @@ body.darkMode {
 }
 
 .toggle:checked + label::after {
-    transform: translate(100%);
+    transform: translateX(100%);
 }
 
 /* Make sure the navbar adjusts on smaller screens */
-@media (max-width: 992px) {
+@media (max-width: 1024px) {
     .sidebar{
        display: flex;
        justify-content: center;
        flex-direction: column;
+       width: 100%;
     }
     
     .toggleContainer {
         position: static;
         margin-left: 0;
+        
     }
 }

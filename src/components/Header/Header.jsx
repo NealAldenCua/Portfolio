@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 import clsx from 'clsx'; // Import clsx
 import classes from './styles.module.css';
 import { IoMenuOutline as MenuIcon } from 'react-icons/io5';
-import logo from '../../images/logo.png';
+import logo from '../../assets/images/logo.png';
 import { LINKS } from '../../data';
 import Sidebar from "../Sidebar/Sidebar";
 
@@ -42,7 +42,6 @@ const Header = () => {
                 </div>
 
                 {/* Links */}
-                {/* <div className={clsx(classes.links, { [classes.toggleTheme]: isDark })}> not workin */}
                 <div className={clsx(classes.links, { [classes.toggleTheme]: isDark })}>
                     {LINKS.map((link) => (
                         <NavLink
